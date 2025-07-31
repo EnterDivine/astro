@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const images = [
+  '/images/pic1.jpg',
+  '/images/pic2.jpg',
+  '/images/pic3.jpg',
+];
+---
+
+<Layout>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
+    {images.map((img) => (
+      <a href={img} target="_blank">
+        <img src={img} alt="Gallery image" class="rounded-lg shadow hover:scale-105 transition" />
+      </a>
+    ))}
+  </div>
+</Layout>

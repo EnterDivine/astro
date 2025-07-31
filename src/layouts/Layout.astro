@@ -1,0 +1,27 @@
+---
+// Optional: define props like title
+const { title = "My Image Gallery" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <header class="text-center p-6 bg-white shadow">
+      <h1 class="text-2xl font-bold">{title}</h1>
+    </header>
+    
+    <main class="max-w-6xl mx-auto">
+      <slot /> <!-- This is where page content goes -->
+    </main>
+
+    <footer class="text-center text-sm text-gray-500 py-4">
+      &copy; {new Date().getFullYear()} My Gallery. All rights reserved.
+    </footer>
+  </body>
+</html>
